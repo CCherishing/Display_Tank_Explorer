@@ -12,6 +12,9 @@ This program uses built in Python libraries of os, math, and random.
 To run this code, VS Code must be installed and zip file opened as folder in workspace. 
 Navigate to the "RUN_ME.py" file and click on "Run current file in interactive environment."
 
+If you are listed as a collaborator, you should clone the repository instead of downloading a local copy.
+To clone the repository, open a new window in VS Code and clone using HTTPS.
+
 ------------------------------------------------------------------------------------------------------
 PROGRAM DETAILS
 
