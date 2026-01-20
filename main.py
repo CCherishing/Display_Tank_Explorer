@@ -9,10 +9,13 @@ from home_button import draw_home_button, handle_home_button_click
 from welcome_screen import draw_welcome_screen, handle_welcome_click
 from mute_button import draw_mute_button, handle_mute_button_click
 
+#Translates file paths to make application run properly for all OS
+Base_Dir = os.path.dirname(os.path.abspath(__file__))
+Data_Dir = os.path.join(Base_Dir, "data")
 
 def run_app():
 
-    background_image = r"data\game_background.png"
+    background_image = os.path.join(Data_Dir, "game_background.png") # Fixed OS compatibility
     species_csv = r"data/display_tank_species_data.csv"
 
     global _game_state, is_muted
@@ -45,7 +48,7 @@ def run_app():
     pygame.init()
     screen = pygame.display.set_mode((screen_width, screen_height))
     pygame.display.set_caption("Display_Tank_Explorer")
-    pygame.mixer.music.load(r"data\ES_Ocean Air - Aerian.mp3")
+    pygame.mixer.music.load(os.path.join(Data_Dir, "ES_Ocean Air - Aerian.mp3")) # Fixed OS compatibility
     pygame.mixer.music.play(-1) # loop indefinitely
     clock = pygame.time.Clock()
 
@@ -160,3 +163,4 @@ def run_app():
 
     pygame.mixer.music.stop()
     pygame.quit()
+
